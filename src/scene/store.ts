@@ -29,4 +29,5 @@ export function setStop(stop: number, scale = scaleAtStop(stop)) {
 
 export const stopOf = (id: SceneId) => LAYER_IDS.indexOf(id);
 
-export const useSceneScale = () => useStore(sceneStore, (s) => s.scale);
+/** The ruler only needs a coarse reading: rounding keeps it from re-rendering on every scroll frame. */
+export const useSceneScale = () => useStore(sceneStore, (s) => Math.round(s.scale * 4) / 4);

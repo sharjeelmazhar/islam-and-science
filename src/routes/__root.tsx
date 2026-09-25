@@ -1,8 +1,10 @@
 import { lazy, Suspense, useEffect, useState, type ReactNode } from "react";
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import appCss from "@/styles/app.css?url";
+import serifFont from "@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2?url";
+import sansFont from "@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2?url";
 import site from "@/data/site.json";
-import { PREFS_BOOT, applyPrefs, usePrefs } from "@/state/prefs";
+import { PREFS_BOOT, applyPrefs, usePrefs, type Prefs } from "@/state/prefs";
 import { Bar } from "@/components/chrome/Bar";
 import { ScaleRail } from "@/components/chrome/ScaleRail";
 import { Footer } from "@/components/chrome/Footer";
@@ -27,6 +29,9 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      // The headline serif and body sans are on every first screen: fetch them with the CSS, not after it.
+      { rel: "preload", href: serifFont, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
+      { rel: "preload", href: sansFont, as: "font", type: "font/woff2", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: asset("favicon.svg"), type: "image/svg+xml" },
       { rel: "icon", href: asset("favicon-32.png"), sizes: "32x32", type: "image/png" },
@@ -74,8 +79,13 @@ function Document({ children }: { children: ReactNode }) {
 /** Mirrors stored reading preferences onto <html>. */
 function PrefsSync() {
   useEffect(() => {
-    applyPrefs(usePrefs.getState());
-    return usePrefs.subscribe(applyPrefs);
+    const apply = (p: Prefs) => {
+      applyPrefs(p);
+      // The hyperlegible face is only fetched by readers who choose it.
+      if (p.font === "legible") void import("@fontsource/atkinson-hyperlegible/latin-400.css");
+    };
+    apply(usePrefs.getState());
+    return usePrefs.subscribe(apply);
   }, []);
   return null;
 }

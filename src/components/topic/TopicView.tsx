@@ -37,7 +37,8 @@ export function TopicView({ topic, n }: { topic: Topic; n: number }) {
   const drawn = reached >= 2 ? 2 : reached >= 1 ? 1 : 0;
 
   return (
-    <article id={topic.id} className="scroll-mt-24 py-20 md:py-32">
+    // content-visibility lets the browser skip layout and paint for topics far off screen.
+    <article id={topic.id} className="scroll-mt-24 py-20 [contain-intrinsic-size:auto_1600px] [content-visibility:auto] md:py-32">
       <header className="mx-auto max-w-6xl px-6">
         <p className="eyebrow">
           Claim {String(n).padStart(2, "0")} · <span style={{ color: `var(--st-${topic.status})` }}>{status.short}</span>

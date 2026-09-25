@@ -1,15 +1,29 @@
 @import "@fontsource/amiri-quran/arabic-400.css";
-@import "@fontsource/amiri/arabic-400.css";
-@import "@fontsource/amiri/latin-400.css";
 @import "@fontsource-variable/newsreader/opsz.css";
-@import "@fontsource-variable/newsreader/opsz-italic.css";
 @import "@fontsource/ibm-plex-sans/latin-400.css";
 @import "@fontsource/ibm-plex-sans/latin-500.css";
 @import "@fontsource/ibm-plex-sans/latin-ext-400.css";
-@import "@fontsource/ibm-plex-sans-arabic/arabic-400.css";
 @import "@fontsource/ibm-plex-mono/latin-400.css";
-@import "@fontsource/ibm-plex-mono/latin-500.css";
 @import "tailwindcss";
+
+/* Italic serif (verse translations, transliterations) uses the static 400 italic, a sixth of the size of the
+   variable italic, registered under the variable family's name so the browser never fakes an oblique. */
+@font-face {
+  font-family: "Newsreader Variable";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../node_modules/@fontsource/newsreader/files/newsreader-latin-400-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Newsreader Variable";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../node_modules/@fontsource/newsreader/files/newsreader-latin-ext-400-italic.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
 
 /* ﷺ (U+FDFA) only: drawn from Amiri Quran but scaled down, so the honorific sits at text size
    inside Latin prose instead of falling back to a glyph twice the line height. */
@@ -91,10 +105,10 @@
   --color-caution: var(--st-caution);
 }
 @theme {
-  --font-quran: "Amiri Quran", "Amiri", serif;
-  --font-arabic: "Amiri", "IBM Plex Sans Arabic", serif;
+  --font-quran: "Amiri Quran", serif;
+  --font-arabic: "Amiri Quran", serif;
   --font-serif: "Salawat", "Newsreader Variable", "Iowan Old Style", Georgia, serif;
-  --font-sans: "Salawat", "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Salawat", "IBM Plex Sans", "Amiri Quran", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   --font-legible: "Atkinson Hyperlegible", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --ease-rise: cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -136,13 +150,13 @@
   .reading ol { list-style: decimal; }
   .reading li { margin-block: 0.25em; }
   .reading li::marker { color: var(--gold-2); }
-  .reading h4 { font: 500 0.75rem/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 1.6em 0 0.6em; }
+  .reading h4 { font: 400 0.75rem/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 1.6em 0 0.6em; }
   .reading table { width: 100%; border-collapse: collapse; font-size: 0.92em; }
   .reading th, .reading td { text-align: left; vertical-align: top; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
   .reading th { font: 500 0.7rem var(--font-mono); letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); }
   .reading sup, .reading sub { font-size: 0.7em; }
 
-  .eyebrow { font: 500 0.72rem/1.2 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  .eyebrow { font: 400 0.72rem/1.2 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
   .tr { font-style: italic; }
 
   /* <details> that animates its height natively (Chromium), and opens instantly elsewhere. */

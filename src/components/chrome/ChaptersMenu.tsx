@@ -23,7 +23,7 @@ export function ChaptersMenu() {
       <dialog
         ref={dialog}
         aria-label="Chapters"
-        className="m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto bg-paper/95 p-0 text-ink backdrop:bg-transparent"
+        className="m-0 h-dvh max-h-none w-screen max-w-none overflow-y-auto bg-paper p-0 text-ink backdrop:bg-transparent"
         onClick={(e) => e.target === e.currentTarget && close()}
       >
         <div className="mx-auto max-w-6xl px-6 py-8">
