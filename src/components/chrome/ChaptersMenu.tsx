@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import { PARTS, pageList, topicsOf } from "@/content/registry";
+import { PARTS, pageList } from "@/content/nav";
 import { ClaimStar } from "@/components/evidence/ClaimStar";
 import { scaleLabel } from "@/lib/scale";
 
@@ -41,7 +41,7 @@ export function ChaptersMenu() {
                   {pageList
                     .filter((p) => p.part === part)
                     .map((p) => {
-                      const topics = topicsOf(p);
+                      const topics = p.topics;
                       return (
                         <li key={p.slug}>
                           <Link

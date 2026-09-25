@@ -1,27 +1,30 @@
 import { useEffect } from "react";
 import { Link } from "@tanstack/react-router";
 import type { Page } from "@/content/define";
-import { PARTS, neighbours, topicsOf } from "@/content/registry";
-import { LAYERS } from "@/scene/layers";
-import { setScene } from "@/scene/store";
+import type { Topic } from "@/content/define";
+import { PARTS, neighbours } from "@/content/nav";
+import { setStop, stopOf } from "@/scene/store";
 import { scaleLabel } from "@/lib/scale";
 import { ClaimStar } from "@/components/evidence/ClaimStar";
 import { TopicView } from "./TopicView";
 
 /** Any content page: a hero over the sky at this page's scale, then its topics and sections, then the next stop. */
 export function PageView({ page }: { page: Page }) {
-  const topics = topicsOf(page);
+  const topics = page.flow.filter((b): b is Topic => b.kind === "topic");
   const { prev, next } = neighbours(page.slug);
 
   useEffect(() => {
-    setScene({ scale: page.scale ?? LAYERS[page.scene].scale, dim: 0 });
+    // Pages outside scale still show a sky, but claim no position on the ruler.
+    setStop(stopOf(page.scene), page.scale ?? Number.NaN);
   }, [page]);
 
   let n = 0;
   return (
     <>
       <header className="relative flex min-h-[92svh] items-end pt-28 pb-16 md:pb-24">
-        <div className="mx-auto w-full max-w-6xl px-6">
+        {/* Keeps the headline readable where it overlaps the sky. */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-full bg-linear-to-r from-paper/80 via-paper/35 to-transparent md:w-2/3" aria-hidden="true" />
+        <div className="relative mx-auto w-full max-w-6xl px-6">
           <p className="eyebrow">
             {page.scale === null ? PARTS[page.part] : `${scaleLabel(page.scale)} · ${PARTS[page.part]}`}
           </p>
@@ -60,7 +63,8 @@ export function PageView({ page }: { page: Page }) {
         </div>
       </header>
 
-      <div className="relative bg-gradient-to-b from-transparent via-paper/90 to-paper to-[40rem]">
+      {/* Below the hero the sky dims to a faint presence, so long reading stays calm. */}
+      <div className="relative" style={{ background: "linear-gradient(to bottom, transparent, color-mix(in srgb, var(--paper) 90%, transparent) 24rem)" }}>
         {page.flow.map((block) =>
           block.kind === "topic" ? (
             <TopicView key={block.id} topic={block} n={++n} />

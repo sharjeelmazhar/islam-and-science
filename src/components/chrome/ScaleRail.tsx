@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { pageList } from "@/content/registry";
+import { pageList } from "@/content/nav";
 import { useSceneScale } from "@/scene/store";
 import { scaleLabel } from "@/lib/scale";
 
@@ -18,11 +18,13 @@ export function ScaleRail() {
   return (
     <nav aria-label="Scale of the universe" className="no-print fixed top-24 right-5 bottom-24 z-30 hidden w-40 lg:block">
       <div className="absolute top-0 right-0 bottom-0 w-px bg-rule-2" />
-      <div
-        className="absolute right-0 h-px w-8 bg-gold transition-[top] duration-500 ease-out"
-        style={{ top: pos(Math.max(BOTTOM, Math.min(TOP, scale))) }}
-        aria-hidden="true"
-      />
+      {Number.isFinite(scale) ? (
+        <div
+          className="absolute right-0 h-px w-8 bg-gold transition-[top] duration-500 ease-out"
+          style={{ top: pos(Math.max(BOTTOM, Math.min(TOP, scale))) }}
+          aria-hidden="true"
+        />
+      ) : null}
       {stops.map((p) => {
         const s = p.scale ?? 0;
         const on = Math.abs(s - scale) < 0.75;

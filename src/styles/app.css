@@ -11,6 +11,16 @@
 @import "@fontsource/ibm-plex-mono/latin-500.css";
 @import "tailwindcss";
 
+/* ﷺ (U+FDFA) only: drawn from Amiri Quran but scaled down, so the honorific sits at text size
+   inside Latin prose instead of falling back to a glyph twice the line height. */
+@font-face {
+  font-family: "Salawat";
+  src: url("../../node_modules/@fontsource/amiri-quran/files/amiri-quran-arabic-400-normal.woff2") format("woff2");
+  unicode-range: U+FDFA;
+  size-adjust: 62%;
+  font-display: swap;
+}
+
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 /* ---------------------------------------------------------------- tokens
@@ -83,8 +93,8 @@
 @theme {
   --font-quran: "Amiri Quran", "Amiri", serif;
   --font-arabic: "Amiri", "IBM Plex Sans Arabic", serif;
-  --font-serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
-  --font-sans: "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Salawat", "Newsreader Variable", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Salawat", "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   --font-legible: "Atkinson Hyperlegible", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --ease-rise: cubic-bezier(0.2, 0.7, 0.2, 1);

@@ -47,7 +47,7 @@ export function ClaimStarShape({ status, cx = 12, cy = 12, r = 10 }: { status: S
       return (
         <g stroke={c} fill="none">
           <path d={d} opacity={0.5} />
-          <path d={`M${cx - r * 0.8} ${cy + r * 0.8}L${cx + r * 0.8} ${cy - r * 0.8}`} strokeWidth={1.4} />
+          <path d={`M${(cx - r * 0.8).toFixed(2)} ${(cy + r * 0.8).toFixed(2)}L${(cx + r * 0.8).toFixed(2)} ${(cy - r * 0.8).toFixed(2)}`} strokeWidth={1.4} />
         </g>
       );
   }
