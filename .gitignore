@@ -8,3 +8,7 @@ Thumbs.db
 
 # Source material kept locally only (too large for GitHub)
 *.pdf
+src/generated/
+node_modules/
+.tanstack/
+.output/

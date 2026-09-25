@@ -1,0 +1,271 @@
+import type { Page } from "../define";
+import { Tr, Word } from "@/components/content/Text";
+import { PageLink } from "@/components/content/PageLink";
+import { DilationLab } from "@/labs/ui";
+
+export default {
+  slug: "physics",
+  title: "Time, Matter & Balance",
+  navTitle: "Time, Matter & Balance",
+  description:
+    "The relativity of time, the atom and what is smaller than it, pairs in creation, invisible supports, fire stored in green trees, and a universe created “with a proper measure”. Physics beside the Qur’an, with a time-dilation calculator.",
+  hook: "Relativity of time, the atom and what is smaller, pairs in creation, and a finely measured universe.",
+  part: "selves",
+  scale: -10,
+  scene: "atom",
+  flow: [
+    {
+      kind: "topic",
+      id: "relativity-of-time",
+      status: "interpretive",
+      title: "“A Day with your Lord which is like a thousand years”",
+      lede: "The Qur’an states plainly that time is not the same for every observer and every realm. Twentieth-century physics found that, in its own domain, this is literally true.",
+      scripture: [{ verse: "22:47" }, { verse: "70:4" }],
+      steps: [
+        {
+          heading: "What the words say",
+          gist: (
+            <p>
+              There is a Day “with your Lord which is like a thousand years of your calculation” (22:47, see also 32:5), and the angels ascend on a Day “the duration of which is fifty thousand years” (70:4). Commentators explain these as days of the unseen realm or of the Last Day. Either way, the verses establish a principle: the duration of a “day” depends on whose day it is.
+            </p>
+          ),
+        },
+        {
+          heading: "What science says",
+          gist: (
+            <p>
+              Until 1905, physics assumed a single universal clock ticking identically for everyone. Einstein’s special relativity (1905) showed that a moving clock runs slow relative to a stationary observer. General relativity (1915) showed that a clock deeper in a gravitational field runs slow too. These are measured facts, not theories awaiting proof:
+            </p>
+          ),
+          more: (
+            <ul>
+              <li>
+                <strong>1971, Hafele–Keating:</strong> atomic clocks flown around the world on airliners disagreed with ground clocks by the predicted fractions of a microsecond.
+              </li>
+              <li>
+                <strong>GPS:</strong> satellite clocks run about 38 microseconds per day fast relative to ground clocks (about +45 from weaker gravity, −7 from orbital speed). Without correcting for this, positions would drift by roughly 10 km a day.
+              </li>
+              <li>
+                <strong>Muons</strong> created in the upper atmosphere survive long enough to reach the ground only because their clocks run slow at nearly the speed of light.
+              </li>
+            </ul>
+          ),
+        },
+        {
+          heading: "How close is the match?",
+          gist: (
+            <p>
+              The verses speak of realms beyond physics, and 1,000 or 50,000 years should not be treated as relativistic calculations. Attempts to derive the speed of light from 32:5 are examined on <PageLink to="myths">Claims We Don’t Make</PageLink>. Still, the Qur’an’s claim that time is relative to the observer, strange to classical physics, is now part of everyday engineering. We grade it a <em>possible reading</em> with a real conceptual resonance.
+            </p>
+          ),
+        },
+      ],
+    },
+    {
+      kind: "section",
+      id: "calculator-how-much-does-time-slow-down",
+      title: "Calculator: how much does time slow down?",
+      body: (
+        <>
+          <h3>Special-relativistic time dilation</h3>
+          <p>γ = 1 / √(1 − v²/c²). A traveller moving at speed v ages 1 year while γ years pass for someone at rest.</p>
+          <DilationLab />
+        </>
+      ),
+    },
+    {
+      kind: "topic",
+      id: "atom-and-smaller",
+      status: "interpretive",
+      title: "“An atom’s weight… nor anything smaller or greater than it”",
+      lede: "The Qur’an names the smallest thing its first listeners could imagine, and then says there are things smaller still.",
+      scripture: [{ verse: "10:61" }, { verse: "34:3" }],
+      steps: [
+        {
+          heading: "What the words say",
+          gist: (
+            <p>
+              <Word ar="ذَرَّة" tr="dharrah" /> in classical Arabic meant a tiny ant, or a mote of dust floating in a sunbeam, the smallest visible thing. Modern Arabic uses the same word for the atom. Both verses then add that nothing escapes Him, “nor anything smaller or greater than it (i.e. the atom)” (10:61).
+            </p>
+          ),
+        },
+        {
+          heading: "What science says",
+          gist: (
+            <ul>
+              <li>
+                <strong>c. 400 BCE:</strong> Greek atomists proposed that matter is made of indivisible particles. <Tr>Atomos</Tr> means “uncuttable”.
+              </li>
+              <li>
+                <strong>1808:</strong> John Dalton’s atomic theory of chemistry.
+              </li>
+            </ul>
+          ),
+          more: (
+            <ul>
+              <li>
+                <strong>1897:</strong> J. J. Thomson discovered the electron, the first particle smaller than an atom.
+              </li>
+              <li>
+                <strong>1911:</strong> Ernest Rutherford discovered the atomic nucleus, about 100,000 times smaller than the atom itself.
+              </li>
+              <li>
+                <strong>1964–68:</strong> Protons and neutrons were found to be made of still smaller quarks, proposed by Gell-Mann and Zweig and detected at SLAC.
+              </li>
+            </ul>
+          ),
+        },
+        {
+          heading: "How close is the match?",
+          gist: (
+            <p>
+              The Qur’an’s point is God’s complete knowledge: nothing is hidden from Him, however small. It does not describe subatomic physics. The phrase “nor anything smaller… than it” refuses to set a lower limit, unlike the ancient idea of an uncuttable atom. That is a <em>possible reading</em> worth noticing, not a proof.
+            </p>
+          ),
+        },
+      ],
+    },
+    {
+      kind: "topic",
+      id: "pairs",
+      status: "interpretive",
+      title: "“We created all things in pairs”",
+      scripture: [{ verse: "51:49" }, { verse: "36:36" }],
+      steps: [
+        {
+          heading: "What the words say",
+          gist: (
+            <p>
+              <Tr>Zawjayn</Tr> means two of a pair: mates, counterparts, complementary opposites. Ibn Kathīr lists heaven and earth, night and day, sun and moon, land and sea, light and darkness, faith and disbelief, death and life, as well as the pairs among animals and plants. 36:36 adds pairs “from those things of which they have no knowledge”.
+            </p>
+          ),
+        },
+        {
+          heading: "What science says",
+          gist: (
+            <p>
+              Pairing runs deep in nature. Most plants and animals reproduce through male and female. Electric charge comes in positive and negative, and magnets have two poles. Every kind of particle has an <em>antiparticle</em> of opposite charge, predicted by Paul Dirac in 1928 and confirmed when Carl Anderson discovered the positron (the anti-electron) in 1932. When a particle meets its antiparticle, both annihilate into energy.
+            </p>
+          ),
+        },
+        {
+          heading: "How close is the match?",
+          gist: (
+            <p>
+              The verse is general and was understood broadly from the start. Antimatter is a striking example of pairs “of which they have no knowledge”, but it is one of many examples, not the verse’s specific meaning. We grade it a <em>possible reading</em>.
+            </p>
+          ),
+        },
+      ],
+    },
+    {
+      kind: "topic",
+      id: "unseen-pillars",
+      status: "interpretive",
+      title: "“Without columns”, “visible to you”",
+      scripture: [{ verse: "13:2" }, { verse: "31:10" }],
+      steps: [
+        {
+          heading: "What the words say",
+          gist: (
+            <p>
+              <Tr>Bi-ghayri ʿamadin tarawnahā</Tr> can be read two ways, and classical commentators recorded both: “without columns, as you can see”, or “without columns <em>that you can see</em>”, meaning there are supports but they are invisible. Ibn Kathīr reports the second view from several early authorities. The translation shown reflects both: 13:2 “without columns; that you may see”, and 31:10 “without any such columns that are visible to you”.
+            </p>
+          ),
+        },
+        {
+          heading: "What science says",
+          gist: (
+            <p>
+              Nothing visible holds up the Moon or the planets. What governs them is gravity, an invisible attraction between masses. Newton described it mathematically (1687). Einstein reinterpreted it as the curvature of space-time (1915). Physicists still do not know what gravity ultimately <em>is</em> at the quantum level.
+            </p>
+          ),
+        },
+        {
+          heading: "How close is the match?",
+          gist: (
+            <p>
+              The reading “supports you cannot see” is ancient, and it fits the invisible structure of gravity elegantly. The verse does not name gravity, though. We grade it a <em>possible reading</em>.
+            </p>
+          ),
+        },
+      ],
+    },
+    {
+      kind: "topic",
+      id: "fire-from-green-trees",
+      status: "interpretive",
+      title: "Fire from the green tree: stored sunlight",
+      scripture: [{ verse: "36:80" }, { verse: "56:71", to: "56:72" }],
+      steps: [
+        {
+          heading: "What the words say",
+          gist: (
+            <p>
+              God made fire for people “out of the green tree”. Commentators explain that the Arabs made fire by rubbing together green branches of two desert trees, <Tr>markh</Tr> and <Tr>ʿafār</Tr>. The verse uses this as a sign that the One who puts fire into moist green wood can bring the dead to life (36:78–81).
+            </p>
+          ),
+        },
+        {
+          heading: "What science says",
+          gist: (
+            <p>
+              Green plants capture sunlight by photosynthesis and store its energy in chemical bonds, as sugars, cellulose and lignin. Burning wood releases that stored solar energy as heat and light. Coal, oil and gas are the remains of ancient living things, and most of their energy also came from sunlight captured long ago. In a real sense, every fire is sunlight trapped by something green.
+            </p>
+          ),
+        },
+        {
+          heading: "How close is the match?",
+          gist: (
+            <p>
+              The verse’s primary meaning is the literal practice of fire-making, used as an argument for resurrection. The photosynthesis connection is a lovely <em>possible reading</em> of why green things hold fire at all.
+            </p>
+          ),
+        },
+      ],
+    },
+    {
+      kind: "topic",
+      id: "measure-and-balance",
+      status: "interpretive",
+      title: "“We have indeed created everything with a proper measure”: a finely tuned universe",
+      lede: "The Qur’an describes a creation made with exact proportion and without inconsistency. Physics has found both uniform laws and finely balanced constants.",
+      scripture: [{ verse: "54:49" }, { verse: "25:2" }, { verse: "55:7" }],
+      steps: [
+        {
+          heading: "What the words say",
+          gist: (
+            <p>
+              <Tr>Bi-qadar</Tr> means with measure, proportion and decree. God “created everything, keeping it in proper measure” (<Tr>qaddarahū taqdīrā</Tr>, 25:2). He “raised the sky and set the scale” (<Tr>al-mīzān</Tr>, 55:7). And the Qur’an asks, “what inconsistency (<Tr>tafāwut</Tr>) do you see in the creation of the Most Gracious?” (67:3).
+            </p>
+          ),
+        },
+        {
+          heading: "What science says",
+          gist: (
+            <ul>
+              <li>
+                <strong>Uniform laws.</strong> The same physical laws hold everywhere we can look. Hydrogen in a galaxy billions of light-years away produces the same spectral lines as hydrogen in a laboratory, shifted only by cosmic expansion. Constants of nature, such as the fine-structure constant, appear unchanged across billions of years to within tiny fractions of a percent.
+              </li>
+            </ul>
+          ),
+          more: (
+            <ul>
+              <li>
+                <strong>Fine-tuning.</strong> Several constants seem balanced within narrow ranges that allow a universe with stars, chemistry and life. If the strong nuclear force were slightly different, stars could not build carbon in the way they do. In 1953 Fred Hoyle predicted a specific energy level in the carbon nucleus on this basis, and it was then found. The cosmological constant is smaller than naive theoretical estimates by an enormous factor. Astronomer Martin Rees surveyed such cases in <em>Just Six Numbers</em> (1999).
+              </li>
+            </ul>
+          ),
+        },
+        {
+          heading: "How close is the match?",
+          gist: (
+            <p>
+              That the universe is lawful, orderly and precisely proportioned is the plain meaning of these verses, and it is a founding assumption of all science. How to <em>explain</em> fine-tuning is debated. Believers see a Creator’s measure, while some physicists propose a vast multiverse in which we happen to occupy a life-friendly region. Science alone cannot settle that question. We grade the correspondence a <em>possible reading</em>, and a profound one.
+            </p>
+          ),
+        },
+      ],
+    },
+  ],
+} satisfies Page;
