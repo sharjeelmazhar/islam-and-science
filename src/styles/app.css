@@ -1,0 +1,218 @@
+@import "@fontsource/amiri-quran/arabic-400.css";
+@import "@fontsource/amiri/arabic-400.css";
+@import "@fontsource/amiri/latin-400.css";
+@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/newsreader/opsz-italic.css";
+@import "@fontsource/ibm-plex-sans/latin-400.css";
+@import "@fontsource/ibm-plex-sans/latin-500.css";
+@import "@fontsource/ibm-plex-sans/latin-ext-400.css";
+@import "@fontsource/ibm-plex-sans-arabic/arabic-400.css";
+@import "@fontsource/ibm-plex-mono/latin-400.css";
+@import "@fontsource/ibm-plex-mono/latin-500.css";
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------------------------------------------------------------- tokens
+   Dark is the default: true black, white ink, gold leaf. Light is warm vellum.
+   Colour carries meaning only (the five grades); gold marks references and what is active.
+   Scene colours are read from these same variables (src/scene/palette.ts). */
+:root {
+  --paper: #000;
+  --paper-2: #0a0a0a;
+  --paper-3: #141414;
+  --ink: #fff;
+  --ink-2: #bdbdbd;
+  --ink-3: #8f8f8f;
+  --rule: #1f1f1f;
+  --rule-2: #333;
+  --gold: #dcbc76;
+  --gold-2: #8d7440;
+  --scrim: rgb(0 0 0 / 0.72);
+  --st-established: #86c9ad;
+  --st-interpretive: #d6bd84;
+  --st-debated: #9db6e0;
+  --st-unseen: #bba9e6;
+  --st-caution: #eb9c8f;
+  --text-scale: 1;
+  --arabic-scale: 1;
+  color-scheme: dark;
+}
+[data-theme="light"] {
+  --paper: #f4efe4;
+  --paper-2: #ece5d6;
+  --paper-3: #e2d9c6;
+  --ink: #16130e;
+  --ink-2: #4a4439;
+  --ink-3: #655d50;
+  --rule: #dcd2bf;
+  --rule-2: #c6b99f;
+  --gold: #7c5a1c;
+  --gold-2: #b89556;
+  --scrim: rgb(244 239 228 / 0.8);
+  --st-established: #2b6450;
+  --st-interpretive: #6b5423;
+  --st-debated: #3a5580;
+  --st-unseen: #56477d;
+  --st-caution: #92372c;
+  color-scheme: light;
+}
+[data-size="s"] { --text-scale: 0.92; }
+[data-size="l"] { --text-scale: 1.1; }
+[data-size="xl"] { --text-scale: 1.22; }
+[data-arabic="l"] { --arabic-scale: 1.2; }
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-2: var(--rule-2);
+  --color-gold: var(--gold);
+  --color-gold-2: var(--gold-2);
+  --color-scrim: var(--scrim);
+  --color-established: var(--st-established);
+  --color-interpretive: var(--st-interpretive);
+  --color-debated: var(--st-debated);
+  --color-unseen: var(--st-unseen);
+  --color-caution: var(--st-caution);
+}
+@theme {
+  --font-quran: "Amiri Quran", "Amiri", serif;
+  --font-arabic: "Amiri", "IBM Plex Sans Arabic", serif;
+  --font-serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
+  --font-sans: "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --font-legible: "Atkinson Hyperlegible", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --ease-rise: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ---------------------------------------------------------------- base */
+@layer base {
+  html {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: calc(100% * var(--text-scale));
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: 5rem;
+    interpolate-size: allow-keywords;
+  }
+  [data-font="serif"] .reading { font-family: var(--font-serif); }
+  [data-font="legible"] { --font-sans: var(--font-legible); }
+  body { min-height: 100dvh; }
+  ::selection { background: var(--gold); color: var(--paper); }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  a { text-decoration-color: var(--gold-2); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--gold); }
+  [lang="ar"] { font-family: var(--font-arabic); }
+}
+
+/* ---------------------------------------------------------------- prose
+   Long-form text inside topics and essays. Kept deliberately narrow and calm. */
+@layer components {
+  .reading { font-size: 1.0625rem; line-height: 1.7; color: var(--ink-2); }
+  .reading p { margin-block: 0 0.9em; }
+  .reading p:last-child { margin-bottom: 0; }
+  .reading strong, .reading b { color: var(--ink); font-weight: 500; }
+  .reading em, .reading i { color: var(--ink); }
+  .reading a { color: var(--ink); text-decoration-line: underline; }
+  .reading ul, .reading ol { padding-left: 1.2rem; margin-block: 0 0.9em; }
+  .reading ul { list-style: disc; }
+  .reading ol { list-style: decimal; }
+  .reading li { margin-block: 0.25em; }
+  .reading li::marker { color: var(--gold-2); }
+  .reading h4 { font: 500 0.75rem/1.2 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 1.6em 0 0.6em; }
+  .reading table { width: 100%; border-collapse: collapse; font-size: 0.92em; }
+  .reading th, .reading td { text-align: left; vertical-align: top; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
+  .reading th { font: 500 0.7rem var(--font-mono); letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3); }
+  .reading sup, .reading sub { font-size: 0.7em; }
+
+  .eyebrow { font: 500 0.72rem/1.2 var(--font-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+  .tr { font-style: italic; }
+
+  /* <details> that animates its height natively (Chromium), and opens instantly elsewhere. */
+  details.more::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 0.5s var(--ease-rise), content-visibility 0.5s allow-discrete;
+  }
+  details.more[open]::details-content { block-size: auto; }
+  details.more > summary { list-style: none; cursor: pointer; }
+  details.more > summary::-webkit-details-marker { display: none; }
+}
+
+/* ---------------------------------------------------------------- dawn / dusk theme sweep (src/lib/theme.ts) */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+:root[data-sweep]::view-transition-new(root) {
+  mask-size: 100% 300%;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 300%;
+  -webkit-mask-repeat: no-repeat;
+}
+:root[data-sweep="dawn"]::view-transition-new(root) {
+  mask-image: linear-gradient(to top, #000 44%, transparent 56%);
+  -webkit-mask-image: linear-gradient(to top, #000 44%, transparent 56%);
+  animation: sweep-rise 0.95s var(--ease-rise) both;
+}
+:root[data-sweep="dusk"]::view-transition-new(root) {
+  mask-image: linear-gradient(to bottom, #000 44%, transparent 56%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 44%, transparent 56%);
+  animation: sweep-fall 0.95s var(--ease-rise) both;
+}
+@keyframes sweep-rise {
+  from { mask-position: 0 0; -webkit-mask-position: 0 0; }
+  to { mask-position: 0 100%; -webkit-mask-position: 0 100%; }
+}
+@keyframes sweep-fall {
+  from { mask-position: 0 100%; -webkit-mask-position: 0 100%; }
+  to { mask-position: 0 0; -webkit-mask-position: 0 0; }
+}
+
+/* ---------------------------------------------------------------- scroll-driven reveal (compositor only, no JS) */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+  }
+}
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media print {
+  :root, [data-theme] { --paper: #fff; --ink: #000; --ink-2: #222; --ink-3: #555; --gold: #6b4d12; --rule: #ccc; color-scheme: light; }
+  .no-print { display: none !important; }
+  details.more::details-content { block-size: auto; content-visibility: visible; }
+}
+
+/* ---------------------------------------------------------------- verse word reveal (components/scripture/Verse.tsx)
+   Only when JS runs (html.js is set in <head>), so prerendered HTML is always readable. */
+.js .verse .vw {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.35em);
+  transition: opacity 0.7s var(--ease-rise), transform 0.7s var(--ease-rise);
+  transition-delay: calc(var(--i) * 55ms);
+}
+.js .verse .ven { opacity: 0; transition: opacity 0.9s var(--ease-rise); transition-delay: calc(var(--n) * 55ms + 150ms); }
+.js .verse[data-in] .vw { opacity: 1; transform: none; }
+.js .verse[data-in] .ven { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .js .verse .vw, .js .verse .ven { opacity: 1; transform: none; transition: none; }
+}
+
+/* Sections are wide (for visualisations and labs); their running text stays at a readable measure. */
+.section-body > :where(p, ul, ol, h4, blockquote) { max-width: 68ch; }
+.section-body > * + * { margin-top: 1.5rem; }
+.reading h3 { font-family: var(--font-serif); font-size: 1.6rem; line-height: 1.2; color: var(--ink); margin: 2.2rem 0 0.8rem; }
+.reading h3:first-child { margin-top: 0; }
