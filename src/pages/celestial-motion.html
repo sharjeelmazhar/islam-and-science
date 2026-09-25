@@ -1,0 +1,192 @@
+---
+title: Orbits & Celestial Motion
+slug: celestial-motion
+description: “Each one floats in an orbit.” The Qur’an on the Sun, the Moon, day and night, set beside what astronomy measures, with an interactive 3D model you can view from the Sun, from the Earth, or travelling through the galaxy.
+scripts: viz/orbits.js
+---
+<div class="stats">
+  <div class="stat"><div class="stat__value">27.3 days</div><div class="stat__label">The Moon’s orbit around Earth, relative to the stars (29.5 days from new moon to new moon)</div></div>
+  <div class="stat"><div class="stat__value">365.25 days</div><div class="stat__label">Earth’s orbit around the Sun, at about 30 km/s</div></div>
+  <div class="stat"><div class="stat__value">≈ 230 km/s</div><div class="stat__label">The Sun’s speed around the centre of the Milky Way</div></div>
+  <div class="stat"><div class="stat__value">≈ 230 Myr</div><div class="stat__label">One “galactic year”: a single lap of the Sun around the galaxy (estimates 225–250 million years)</div></div>
+</div>
+
+<article class="topic" id="each-in-an-orbit">
+  <header class="topic__head">
+    {{status established}}
+    <h2>“Each one floats in an orbit”</h2>
+    <p class="lede">Twice the Qur’an says the Sun and the Moon each float in a <span class="tr">falak</span>, an orbit, using a verb of swimming or floating.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 21:33}}{{verse 36:40}}</div>
+    <div class="topic__analysis">
+      <h3>What the words say</h3>
+      <p><span class="word"><span lang="ar">فَلَك</span> <span class="tr">falak</span></span> means a rounded path or sphere of revolution. Classical lexicographers compared it to the round whorl of a spindle (<span class="tr">falkat al-mighzal</span>). <span class="word"><span lang="ar">يَسْبَحُونَ</span> <span class="tr">yasbaḥūn</span></span> means “they swim” or “float”, describing smooth, continuous motion by the body itself, not something dragged along. The plural verb suits a group of more than two, so the verse may refer to the night, the day, the Sun and the Moon together, or to celestial bodies generally.</p>
+      <p>36:40 adds that it is not befitting for the Sun to “overtake” the Moon. Each keeps to its own course.</p>
+      <h3>What science says</h3>
+      <ul>
+        <li>The Moon orbits Earth every 27.3 days at an average distance of 384,400 km, and it is slowly moving away, by about 3.8 cm per year (measured by laser ranging to reflectors left on the Moon).</li>
+        <li>The Sun is not at rest. It orbits the centre of the Milky Way at roughly 230 km/s, carrying the whole Solar System with it. It also moves at about 20 km/s relative to nearby stars, towards the constellation Hercules, and it spins on its own axis about once every 25 days at its equator.</li>
+        <li>Every one of these motions is in its own path. The Sun and the Moon never “catch up” with each other in the sense of sharing an orbit.</li>
+      </ul>
+      <h3>How close is the match?</h3>
+      <p>The plain meaning, that the Sun and the Moon each move continuously in their own path, is exactly right. In the seventh century, most people thought the Sun’s motion was simply its daily trip across the sky. The Qur’an’s wording fits the modern picture of the Sun in its own vast orbit equally well. We grade this <em>consistent with established science</em>.</p>
+    </div>
+  </div>
+</article>
+
+<section class="section">
+  <h2>Explore: one Solar System, three points of view</h2>
+  <div class="viz" data-orbits data-start="helio">
+    <div class="viz__stage viz__stage--tall">
+      <div class="viz__overlay" data-overlay></div>
+    </div>
+    <div class="viz__controls">
+      <div class="seg" role="group" aria-label="Frame of reference">
+        <button type="button" data-mode="helio" aria-pressed="true">Sun-centred</button>
+        <button type="button" data-mode="geo" aria-pressed="false">Earth-centred</button>
+        <button type="button" data-mode="galactic" aria-pressed="false">Through the galaxy</button>
+      </div>
+      <button class="viz__btn" type="button" data-play>Pause</button>
+      <label class="grow">Speed <input type="range" min="0" max="100" value="45" data-speed aria-label="Simulation speed"></label>
+      <label><input type="checkbox" data-trails checked> Trails</label>
+      <button class="viz__btn" type="button" data-reset><svg class="icon" aria-hidden="true"><use href="{{root}}assets/img/icons.svg#reset"/></svg>Reset</button>
+    </div>
+    <p class="viz__caption" data-caption></p>
+  </div>
+  <p class="small muted">Drag to rotate; pinch to zoom on touch screens, or focus the model and use the arrow keys and +/−. Real orbital periods, simplified to circular orbits in one plane. Planet sizes and the Moon’s distance are enlarged so you can see them. The Earth-centred view is discussed on <a href="{{root}}earths-motion/">The Earth’s Motion: A Classical Debate</a>.</p>
+</section>
+
+<article class="topic" id="sun-runs">
+  <header class="topic__head">
+    {{status established}}
+    <h2>“The sun moves towards its final point”</h2>
+    <p class="lede">The Sun is described as moving (<span class="tr">tajrī</span>, literally “running”) “towards its final point”, and each of the Sun and Moon as running “in accordance to a fixed term”.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 36:38}}{{verse 13:2}}</div>
+    <div class="topic__analysis">
+      <h3>What the words say</h3>
+      <p><span class="word"><span lang="ar">لِمُسْتَقَرٍّ لَّهَا</span> <span class="tr">li-mustaqarrin lahā</span></span> can mean “to its place of rest”, “to its appointed time”, or “to its settled course”. The translation shown explains it as the Sun’s final end on the Day of Judgement. 13:2 adds that the Sun and Moon each run “in accordance to a fixed term” (<span class="tr">li-ajalin musammā</span>), a fixed lifespan.</p>
+      <p>The Prophet ﷺ linked this verse to the Sun’s prostration beneath the Throne. Scholars explain this as a matter of the unseen. All creation prostrates to God in a manner we do not perceive (see 22:18), and the Throne encompasses the whole universe.</p>
+      {{hadith bukhari:3199}}
+      <h3>What science says</h3>
+      <p>The Sun really does “run”. It travels around the galaxy at about 230 km/s, which is roughly 7 billion kilometres every year. And it really does have a “fixed term”. The Sun is about 4.6 billion years old, and it will exhaust the hydrogen in its core in roughly 5 billion years, swell into a red giant, and end as a white dwarf. Every star has a finite life set by its mass.</p>
+      <h3>How close is the match?</h3>
+      <p>That the Sun moves and has a finite, appointed term is fully consistent with astronomy. What its <span class="tr">mustaqarr</span> ultimately is, and the prostration described in the hadith, belong to the unseen, and we do not try to identify them with a physical location.</p>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="two-easts">
+  <header class="topic__head">
+    {{status established}}
+    <h2>“The Lord of both the Easts, and the Lord of both the Wests”</h2>
+    <p class="lede">A precise piece of observational astronomy that classical commentators understood exactly as astronomers do.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 55:17}}{{verse 70:40}}</div>
+    <div class="topic__analysis">
+      <h3>What the words say</h3>
+      <p>55:17 speaks of <em>two</em> easts and two wests. 70:40 speaks of many easts and wests (<span class="tr">al-mashāriq wa’l-maghārib</span>). Ibn Kathīr explains the two easts as “the sunrise of summer and the sunrise of winter”, with the two wests likewise. The plural refers to the Sun rising at a different point every day between those two extremes.</p>
+      <h3>What science says</h3>
+      <p>Because Earth’s axis is tilted about 23.4°, the point on the horizon where the Sun rises moves north and south through the year. It reaches its extremes at the June and December solstices, and it rises due east only at the equinoxes. At the latitude of Makkah (21.4° N) the sunrise point swings about 25° either side of due east. At London (51.5° N) it swings about 40°.</p>
+      <h3>How close is the match?</h3>
+      <p>Exact, and understood that way from the beginning. We grade this <em>consistent with established science</em>. It is a good example of the Qur’an describing nature precisely, in terms anyone who watches the horizon can verify.</p>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="lamp-and-light">
+  <header class="topic__head">
+    {{status established}}
+    <h2>The Sun a lamp, the Moon a light</h2>
+    <p class="lede">The Qur’an consistently uses different words for the Sun and the Moon: the Sun is a <span class="tr">sirāj</span> (lamp) and <span class="tr">ḍiyāʾ</span> (radiance), while the Moon is <span class="tr">nūr</span> (light) and <span class="tr">munīr</span> (illuminated).</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 71:16}}{{verse 10:5}}{{verse 78:13}}</div>
+    <div class="topic__analysis">
+      <h3>What the words say</h3>
+      <p>A <span class="word"><span lang="ar">سِرَاج</span> <span class="tr">sirāj</span></span> is a lamp, something that burns and gives out its own light and heat. <span class="tr">Wahhāj</span> (78:13) adds “blazing”. The Moon is never called a <span class="tr">sirāj</span>. It is <span class="tr">nūr</span>, light, and <span class="tr">munīr</span>, light-giving or lit up (25:61).</p>
+      <h3>What science says</h3>
+      <p>The Sun generates its own light by nuclear fusion in its core, radiating about 3.8 × 10<sup>26</sup> watts. The Moon produces no light of its own. It reflects sunlight, and it is actually quite dark, reflecting only about 12% of the light that falls on it.</p>
+      <h3>How close is the match?</h3>
+      <p>The Qur’an’s consistent vocabulary fits the physics perfectly. To be fair, some ancient thinkers, such as the Greek philosopher Anaxagoras, had already argued that moonlight is reflected sunlight, so this was not unknowable in the seventh century. What stands out is the Qur’an’s consistency across many verses. We grade this <em>consistent with established science</em>.</p>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="night-wraps-day">
+  <header class="topic__head">
+    {{status interpretive}}
+    <h2>Night coiled over day, and the shape of the Earth</h2>
+    <p class="lede">The Qur’an describes night and day being <em>wound</em> around each other, the verb used for winding a turban.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 39:5}}{{verse 36:37}}</div>
+    <div class="topic__analysis">
+      <h3>What the words say</h3>
+      <p><span class="word"><span lang="ar">يُكَوِّرُ</span> <span class="tr">yukawwiru</span></span> comes from <span class="tr">k-w-r</span>, used for winding a turban round and round the head (<span class="tr">kawwara al-ʿimāmah</span>). The image is of night and day continually wrapping around one another. 36:37 uses a different image. God “strips” or peels (<span class="tr">naslakhu</span>) the day away from the night, revealing darkness as if it lay underneath.</p>
+      <h3>What science says</h3>
+      <p>On a spherical, turning Earth, half the globe is always in daylight and half in night. The boundary between them, the terminator, sweeps continuously around the planet. Night and day chase each other endlessly, exactly like a cloth wound around a sphere. Space itself is dark, and daylight is a thin layer of scattered sunlight in our atmosphere.</p>
+      <h3>What classical scholars said about the Earth’s shape</h3>
+      <p>Muslim scholars widely held that the Earth is a sphere. Fakhr al-Dīn al-Rāzī (d. 1210) answered people who thought the Qur’an’s description of the Earth as a “resting place” (<span class="tr">firāsh</span>, literally a bed, 2:22) meant it was flat. He said a sphere, when it is very large, looks flat to anyone standing on it, so the Earth can be a sphere and still be a bed.</p>
+      <h3>How close is the match?</h3>
+      <p>The imagery sits naturally with a round Earth, but the verses do not state the Earth’s shape directly. We grade this a <em>possible reading</em>.</p>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="reckoning">
+  <header class="topic__head">
+    {{status established}}
+    <h2>“The sun and the moon are programmed”</h2>
+    <p class="lede">The Qur’an presents the heavens as predictable and measurable. That is the founding assumption of astronomy, and the reason Muslims became expert astronomers.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 55:5}}{{verse 17:12}}{{verse 2:189}}</div>
+    <div class="topic__analysis">
+      <h3>What the words say</h3>
+      <p><span class="word"><span lang="ar">بِحُسْبَانٍ</span> <span class="tr">bi-ḥusbān</span></span> means “by calculation, by exact reckoning”, which the translation shown renders as “programmed (moving on a fixed orbit)”. 17:12 says night and day were made so that people “come to know the calculation of the years and the counting (of time)”. The new moons (<span class="tr">ahillah</span>) are “indicators of time” (2:189). The Islamic calendar is lunar: each month begins with the new crescent, and there are twelve months (9:36).</p>
+      <h3>What science says</h3>
+      <p>Celestial motions are regular enough to predict eclipses centuries in advance to within seconds. The Moon’s phases repeat every 29.53 days on average, so twelve lunar months make 354.37 days, about 11 days shorter than a solar year. That is why Ramadan moves through the seasons, completing a full cycle in about 33 years.</p>
+      <h3>From verse to observatory</h3>
+      <p>The need to fix prayer times, the direction of Makkah (<span class="tr">qiblah</span>) and the start of lunar months made astronomy a religious science. Muslim astronomers built observatories at Marāgha (1259) and Samarkand (1420s) and produced highly accurate tables. See <a href="{{root}}scholars/">Muslim Scientists</a>.</p>
+      {{hadith bukhari:1043}}
+      <p class="small muted">When the sun eclipsed on the day his son died, people assumed a link. The Prophet ﷺ rejected the superstition immediately. Eclipses are signs of God, governed by His laws, not reactions to human events.</p>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="shadows">
+  <header class="topic__head">
+    {{status established}}
+    <h2>The sun “a proof for it”: shadows</h2>
+    <p class="lede">A verse about shadows is also, in practice, the basis of Islamic timekeeping.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 25:45-46}}</div>
+    <div class="topic__analysis">
+      <h3>What the words say</h3>
+      <p>God spread out the shade, could have made it stationary, and made the Sun “a proof for it” (<span class="tr">dalīl</span>, an indicator or guide). Then He “gradually folded it”.</p>
+      <h3>What science says, and how Muslims used it</h3>
+      <p>A shadow’s length and direction are set entirely by the Sun’s altitude and bearing. At noon the shadow is shortest, and in the afternoon it lengthens steadily. This is the principle of the sundial. Islamic law defines prayer times by it. <span class="tr">Ẓuhr</span> begins just after the Sun passes its highest point. For <span class="tr">ʿAṣr</span>, most schools start the time when an object’s shadow equals its length plus its noon shadow, and the Ḥanafī school when it equals twice its length plus its noon shadow. Muslim astronomers produced detailed shadow tables for every latitude.</p>
+      <h3>How close is the match?</h3>
+      <p>The verse describes the Sun-shadow relationship accurately, and it became the basis of a practical science. We grade this <em>consistent with established science</em>.</p>
+    </div>
+  </div>
+</article>
+
+<article class="topic" id="moon-phases">
+  <header class="topic__head">
+    {{status established}}
+    <h2>“Till it becomes like a dried (i.e. curved) branch of a date tree”: the Moon’s phases</h2>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 36:39}}</div>
+    <div class="topic__analysis">
+      <p>The Moon passes through “phases” (<span class="tr">manāzil</span>, literally stations) “till it becomes like a dried (i.e. curved) branch of a date tree”, an <span class="tr">ʿurjūn qadīm</span>, the old, dried, curved stalk of a date cluster. That is a perfect image of the thin, pale crescent at the end of the month.</p>
+      <p>Phases happen because we see different fractions of the Moon’s sunlit half as it orbits Earth. The Moon also moves through about 13° of sky each day against the stars, and the Arabs traditionally divided its monthly path into 28 “stations”, the <span class="tr">manāzil al-qamar</span>.</p>
+    </div>
+  </div>
+</article>

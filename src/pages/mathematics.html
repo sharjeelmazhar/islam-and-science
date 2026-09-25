@@ -1,0 +1,208 @@
+---
+title: Numbers & Mathematics
+slug: mathematics
+description: The arithmetic written into the Qur’an, 300 solar years that are 309 lunar ones, the inheritance fractions that shaped algebra, the number 19, primes, and famous number patterns, each checked against the text with calculators you can use yourself.
+scripts: tools/labs.js
+---
+<div class="callout callout--key">
+  <p class="callout__title">How this page works</p>
+  <p>Every count below was checked against the standard Uthmani text (Ḥafṣ reading, Kufan verse numbering: 114 surahs, 6,236 verses). Where a claim depends on a counting <em>choice</em>, we tell you the choice. The calculators let you check things yourself.</p>
+</div>
+
+<section class="section">
+  <h2>Arithmetic written into the text</h2>
+  <p class="lede">The Qur’an does not only mention numbers. In several places it adds, subtracts, multiplies and compares them explicitly.</p>
+  <div class="split">
+    <div class="flow">
+      {{verse 2:196}}
+      <p class="small"><strong>3 + 7 = 10</strong>, and the verse states the total: “these are ten complete”.</p>
+      {{verse 7:142}}
+      <p class="small"><strong>30 + 10 = 40</strong>, again with the total stated.</p>
+    </div>
+    <div class="flow">
+      {{verse 29:14}}
+      <p class="small"><strong>1000 − 50 = 950</strong>: Noah’s time among his people is given as a subtraction.</p>
+      {{verse 2:261}}
+      <p class="small"><strong>7 × 100 = 700</strong>, and “Allah may increase even more than this for whomsoever He wills”: a lesson in growth by multiplication.</p>
+    </div>
+  </div>
+  {{verse 8:65-66}}
+  <p>These verses set a ratio and then revise it: first twenty to two hundred and a hundred to a thousand (<strong>1 : 10</strong>), then, once God “lightened the burden”, a hundred to two hundred and a thousand to two thousand (<strong>1 : 2</strong>). The ratios are stated twice with different numbers, as a mathematician would check a proportion.</p>
+</section>
+
+<article class="topic" id="three-hundred-and-nine">
+  <header class="topic__head">
+    {{status established}}
+    <h2>“Three hundred years, and nine more”</h2>
+    <p class="lede">The sleepers of the cave stayed “three hundred years, and nine more”. The difference between solar and lunar years gives exactly that.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">
+      {{verse 18:25}}
+      <div class="lab" data-years>
+        <div class="lab__head"><h3>Solar ↔ lunar years</h3><p>Enter a number of solar years.</p></div>
+        <div class="lab__body">
+          <label>Solar years <input type="number" min="0" max="100000" step="1" value="300" aria-label="Number of solar years"></label>
+          <div class="lab__out" data-years-out></div>
+        </div>
+      </div>
+    </div>
+    <div class="topic__analysis">
+      <h3>What the numbers say</h3>
+      <p>A solar (tropical) year lasts 365.2422 days. A lunar year of twelve months lasts about 354.3671 days. So:</p>
+      <p style="font-family:var(--font-mono);font-size:.95rem">300 × 365.2422 ÷ 354.3671 = <strong>309.2</strong> lunar years</p>
+      <p>Three hundred solar years are, to the nearest whole year, three hundred and <em>nine</em> lunar years.</p>
+      <h3>What the classical scholars said</h3>
+      <p>This is not a modern discovery. Ibn Kathīr (d. 1373) wrote in his commentary: “The length of time was three hundred plus nine years in lunar years, which is three hundred years in solar years. The difference between one hundred lunar years and one hundred solar years is three years, which is why after mentioning three hundred, Allah says, ‘adding nine’.” He also records Qatādah’s different view, that the figure was a claim of the People of the Book, answered by the next verse: “Allah knows best how long they stayed”.</p>
+      <h3>How close is the match?</h3>
+      <p>The arithmetic is exact to the year, and classical scholars noticed it. We grade it <em>consistent with established science</em>. The Arabian listeners used lunar months, while their Christian and Jewish neighbours used solar calendars, and the verse gives the figure that fits both.</p>
+    </div>
+  </div>
+</article>
+
+<section class="section">
+  <h2>“He has kept count of all things”</h2>
+  <div class="prose-aside">
+    <div class="prose">
+      <p>The Qur’an describes God as having “kept count of all things”, and the Sun and Moon as moving by exact reckoning. It fixed the Moon’s stages “that you know the counting of the years, and calculation”.</p>
+      <p>This matters to anyone who does physics. In 1960 the physicist Eugene Wigner wrote a famous essay on “the unreasonable effectiveness of mathematics in the natural sciences”. Why should equations worked out on paper describe planets, atoms and light so precisely? For a believer the answer is natural. The universe is the work of a Creator who made everything with number and measure, and gave human minds the ability to discover it.</p>
+    </div>
+    <aside>{{verse 72:28}}{{verse 10:5}}</aside>
+  </div>
+</section>
+
+<article class="topic" id="inheritance">
+  <header class="topic__head">
+    {{status established}}
+    <h2>Fractions of inheritance, and the birth of algebra</h2>
+    <p class="lede">The Qur’an’s inheritance verses assign exact fractions: ½, ¼, ⅛, ⅔, ⅓, ⅙. Working them out in real cases became one of the great drivers of Islamic mathematics.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 4:11}}</div>
+    <div class="topic__analysis">
+      <h3>From verses to al-jabr</h3>
+      <p>Around 820 CE in Baghdad, Muḥammad ibn Mūsā al-Khwārizmī wrote <em>al-Kitāb al-Mukhtaṣar fī Ḥisāb al-Jabr wa’l-Muqābala</em>. The word “algebra” comes from its title, and “algorithm” from his name. A large part of the book is devoted to inheritance problems. Dividing estates according to the Qur’anic shares, with debts and bequests, called for systematic methods of solving equations.</p>
+      <h3>When the fractions add up to more than one</h3>
+      <p>Sometimes the prescribed shares exceed the whole estate. In a famous case called <span class="tr">al-Minbariyya</span>, the deceased leaves a wife (⅛), two daughters (⅔), a father (⅙) and a mother (⅙). Over a common denominator of 24 that is 3 + 16 + 4 + 4 = 27 parts, more than 24. ʿAlī ibn Abī Ṭālib, according to the well-known report, was asked about it while giving a sermon and answered at once: “Her eighth has become a ninth.” Every share is scaled down in proportion (<span class="tr">al-ʿawl</span>), so the wife receives 3/27 = 1/9. Most jurists followed this method. Ibn ʿAbbās famously disagreed.</p>
+    </div>
+  </div>
+</article>
+
+<div class="lab" data-awl>
+  <div class="lab__head"><h3>al-Minbariyya: “her eighth became a ninth”</h3><p>Top: the Qur’anic shares over 24, which add up to 27. Bottom: after proportional reduction (<span class="tr">ʿawl</span>) over 27.</p></div>
+  <div class="lab__body">
+    <p class="small muted" data-awl-sum></p>
+    <div class="bars" data-awl-before aria-label="Shares before reduction"></div>
+    <div class="bars" data-awl-after aria-label="Shares after reduction"></div>
+    <div class="bars__legend" data-awl-legend></div>
+  </div>
+</div>
+
+<article class="topic" id="nineteen">
+  <header class="topic__head">
+    {{status debated}}
+    <h2>The number nineteen</h2>
+    <p class="lede">“Above it are nineteen guards.” A single verse, followed by an unusually long explanation of <em>why</em> God mentioned the number.</p>
+  </header>
+  <div class="topic__body">
+    <div class="topic__scripture">{{verse 74:30-31}}</div>
+    <div class="topic__analysis">
+      <h3>Facts you can verify</h3>
+      <ul>
+        <li>The basmala, <span lang="ar">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</span>, is written with <strong>19 letters</strong> (see below).</li>
+        <li>There are <strong>114 surahs = 6 × 19</strong>.</li>
+        <li>The basmala occurs <strong>114 times</strong>. It opens 113 surahs (all except Sūrat al-Tawbah, 9), and appears once more inside Sūrat al-Naml (27:30).</li>
+        <li>From the surah missing its basmala (9) to the surah with the extra one (27) is exactly <strong>19 surahs</strong>, counting both. The sum of those surah numbers, 9 + 10 + … + 27, is <strong>342 = 18 × 19</strong>.</li>
+        <li>The first revelation, Sūrat al-ʿAlaq (96), is the <strong>19th surah counting from the end</strong>, and it has <strong>19 verses</strong>.</li>
+      </ul>
+      <h3>A cautionary history</h3>
+      <p>In the 1970s Rashad Khalifa used an early computer to search for 19-based patterns, and his findings spread widely. Many of his later counts relied on non-standard spellings or selective rules. He eventually claimed to be a messenger and declared two verses of the Qur’an (9:128–129) to be later additions because they did not fit his code. Scholars of every Muslim school rejected this. The lesson is clear: a numerical theory must never be allowed to overrule the preserved text.</p>
+      <h3>Our assessment</h3>
+      <p>The facts listed above are real and anyone can check them. Their <em>significance</em> is debated. 74:31 itself says the number was given as a test and to strengthen the faith of believers, and it does not describe a code. We present these as genuine curiosities, not as the proof of the Qur’an.</p>
+    </div>
+  </div>
+</article>
+
+<div class="lab">
+  <div class="lab__head"><h3>The nineteen letters of the basmala</h3><p>As written in the muṣḥaf. The alif of <span class="tr">al-Raḥmān</span> is a small superscript mark, not a full letter, so it is not counted.</p></div>
+  <div class="lab__body">
+    <div class="letter-strip" lang="ar">
+      <span><b>ب</b><small>1</small></span><span><b>س</b><small>2</small></span><span><b>م</b><small>3</small></span><span class="gap"></span>
+      <span><b>ا</b><small>4</small></span><span><b>ل</b><small>5</small></span><span><b>ل</b><small>6</small></span><span><b>ه</b><small>7</small></span><span class="gap"></span>
+      <span><b>ا</b><small>8</small></span><span><b>ل</b><small>9</small></span><span><b>ر</b><small>10</small></span><span><b>ح</b><small>11</small></span><span><b>م</b><small>12</small></span><span><b>ن</b><small>13</small></span><span class="gap"></span>
+      <span><b>ا</b><small>14</small></span><span><b>ل</b><small>15</small></span><span><b>ر</b><small>16</small></span><span><b>ح</b><small>17</small></span><span><b>ي</b><small>18</small></span><span><b>م</b><small>19</small></span>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <h2>Seven, nineteen, and other primes</h2>
+  <div class="prose-aside">
+    <div class="prose">
+      <p>A prime number has no divisors except 1 and itself. Two numbers that recur in the Qur’an are prime: <strong>7</strong> (the seven heavens, and the seven verses of al-Fātiḥah, “seven verses… which are often repeated”, 15:87) and <strong>19</strong>. Here are the whole numbers the Qur’an mentions, with the primes highlighted:</p>
+      <div class="nums" data-mark-primes>
+        <span>1<small>112:1</small></span><span>2<small>16:51</small></span><span>3<small>18:22</small></span><span>4<small>9:36</small></span><span>5<small>18:22</small></span><span>6<small>7:54</small></span><span>7<small>2:29</small></span><span>8<small>69:7</small></span><span>9<small>17:101</small></span><span>10<small>2:196</small></span><span>11<small>12:4</small></span><span>12<small>9:36</small></span><span>19<small>74:30</small></span><span>20<small>8:65</small></span><span>30<small>46:15</small></span><span>40<small>2:51</small></span><span>50<small>29:14</small></span><span>60<small>58:4</small></span><span>70<small>9:80</small></span><span>80<small>24:4</small></span><span>99<small>38:23</small></span><span data-n="100">100<small>2:259</small></span><span data-n="200">200<small>8:65</small></span><span data-n="300">300<small>18:25</small></span><span data-n="1000">1,000<small>97:3</small></span><span data-n="2000">2,000<small>8:66</small></span><span data-n="3000">3,000<small>3:124</small></span><span data-n="5000">5,000<small>3:125</small></span><span data-n="50000">50,000<small>70:4</small></span><span data-n="100000">100,000<small>37:147</small></span>
+      </div>
+      <p>An honest note: primes are common among small numbers. A quarter of the numbers below 100 are prime, and five of the first ten whole numbers above 1 (2, 3, 5, 7 and 11) are. So a prime turning up is not remarkable in itself. The total number of verses, 6,236 = 2 × 2 × 1,559, is not prime, and neither is the number of surahs, 114.</p>
+    </div>
+    <aside>
+      <div class="lab" data-prime>
+        <div class="lab__head"><h3>Prime checker</h3><p>Is it prime? What are its factors? Is it a multiple of 19?</p></div>
+        <div class="lab__body">
+          <input type="number" min="1" value="6236" aria-label="Number to check">
+          <div class="lab__out" data-prime-out></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Middles and letter values</h2>
+  <div class="split">
+    <div class="flow">
+      <h3>“A middle nation” in the middle</h3>
+      <p>Sūrat al-Baqarah has 286 verses in the Kufan count. Verse <strong>143</strong>, exactly half of 286, is the one that calls the Muslim community <span class="word"><span lang="ar">أُمَّةً وَسَطًا</span> <span class="tr">ummatan wasaṭan</span></span>, “a middle (balanced) nation”. The arithmetic is exact. The observation depends on the Kufan verse count, since other classical counting traditions number al-Baqarah slightly differently.</p>
+      <h3>Iron: 57 and 26</h3>
+      <p>In the traditional <span class="tr">abjad</span> system every Arabic letter has a number. <span lang="ar">الحديد</span> (<span class="tr">al-ḥadīd</span>, “the iron”) adds up to <strong>57</strong>, and Sūrat al-Ḥadīd is surah <strong>57</strong>, which is also exactly half of 114. Without the article, <span lang="ar">حديد</span> totals <strong>26</strong>, the atomic number of iron. A caution: iron’s most common isotope is iron-56 (about 92%). Iron-57 exists but makes up only about 2%, so claims linking “57” to iron’s isotopes are misleading.</p>
+    </div>
+    <div class="lab" data-abjad>
+      <div class="lab__head"><h3>Abjad calculator</h3><p>Type Arabic. Diacritics are ignored. Conventions: ة = 5, ى = 10, ء = 1.</p></div>
+      <div class="lab__body">
+        <div class="lab__presets" role="group" aria-label="Examples">
+          <button type="button" data-preset="الحديد"><span lang="ar">الحديد</span></button>
+          <button type="button" data-preset="حديد"><span lang="ar">حديد</span></button>
+          <button type="button" data-preset="الله"><span lang="ar">الله</span></button>
+          <button type="button" data-preset="محمد"><span lang="ar">محمد</span></button>
+          <button type="button" data-preset="بسم الله الرحمن الرحيم">Basmala</button>
+        </div>
+        <input class="ar-input" type="text" value="الحديد" dir="rtl" lang="ar" aria-label="Arabic text">
+        <div class="lab__chips" data-abjad-chips></div>
+        <div class="lab__out" data-abjad-out></div>
+      </div>
+    </div>
+  </div>
+  <p class="small muted">The basmala totals 786, the number many Muslims in South Asia write as a shorthand for it. Abjad values are a traditional convention for letters, not part of the Qur’an’s meaning. Treat these results as curiosities.</p>
+</section>
+
+<section class="section">
+  <h2>Pattern or coincidence? How to tell</h2>
+  <div class="prose-aside">
+    <div class="prose">
+      <p>The Qur’an has about 77,000 words and 320,000 letters. In any text that size, if you are free to choose <em>what</em> to count and <em>how</em>, you will always find “amazing” numbers. Mathematicians call this the law of truly large numbers. It is also known as the Texas sharpshooter fallacy: fire at a barn, then paint the target around the bullet holes.</p>
+      <p>Two popular examples, checked against the text:</p>
+      <ul>
+        <li><strong>“The word <em>month</em> appears 12 times.”</strong> <em>True under one rule.</em> The singular <span class="tr">shahr</span>, with any attached particles, occurs exactly 12 times. If the dual <span class="tr">shahrayn</span> (2) and the plural <span class="tr">ashhur</span> (6) are included, the total is 20.</li>
+        <li><strong>“The word <em>day</em> appears 365 times.”</strong> <em>Depends entirely on the rule.</em> Our count of singular forms of <span class="tr">yawm</span>, with prefixes and suffixes, gives 444, or 374 without <span class="tr">yawmaʾidhin</span> (“on that day”). Reaching exactly 365 requires a particular selection of forms.</li>
+        <li><strong>“Makkah divides the globe at the golden ratio.”</strong> Makkah lies at 21.42° N. Its distance to the South Pole divided by its distance to the North Pole is 111.42 / 68.58 = 1.625, close to the golden ratio 1.618 but 0.4% off. Almost any city is “close” to <em>some</em> famous number.</li>
+      </ul>
+      <p>A numerical pattern deserves attention when it uses the standard text, has counting rules fixed <em>before</em> looking, can be reproduced by anyone, and would be very unlikely by chance. Most viral claims fail at least one of those tests. The Qur’an’s miracle has never rested on number games. Its language, guidance and preservation are its proof, so the believer loses nothing by being strict here.</p>
+    </div>
+    <aside>
+      <div class="callout callout--caution">
+        <p class="callout__title">A rule we follow</p>
+        <p>We never adjust the text to fit a number. Counting rules are chosen before counting, and they are always stated.</p>
+      </div>
+    </aside>
+  </div>
+</section>
