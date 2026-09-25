@@ -2,60 +2,73 @@
 
 A careful, referenced guide to the Qur’an, the Hadith and modern science (cosmology, physics, mathematics, earth science and biology), written for curious minds of every background.
 
-Static website with no backend and no dependencies beyond Python’s standard library.
+The site is one journey through scale, after Qur’an 41:53: *“We shall now show them Our signs in the entire universe and within their own selves.”* It starts at the observable universe (10²⁶ m) and zooms through the galaxy, the Solar System, the Earth and a mountain, down to the reader (10⁰ m), a honeycomb, an embryo and an atom. Each chapter lives at its own scale, and every claim is graded for how well the text and the science actually match.
 
 ## Run locally
 
+Requires Node 22+ and pnpm (the version is pinned in `package.json`).
+
 ```bash
-python3 build.py --serve      # builds into dist/ and serves http://localhost:8000
+pnpm install
+pnpm dev          # http://localhost:5173/islam-and-science/
+pnpm check        # types, lint, lab tests, then a full static build into dist/client
 ```
 
-Search, the 3D models and the calculators need the site to be served over http (not opened as a file).
+## Stack
+
+Vite, React 19, TanStack Start (every route is prerendered to static HTML), strict TypeScript, Tailwind CSS 4, Motion, and three.js through React Three Fiber. There is no backend.
 
 ## Project structure
 
 ```
-build.py                 Static site builder (stdlib only)
 src/
-  layouts/base.html      Shared page shell: top bar, sidebar, footer, search, settings
-  pages/*.html           One file per page (front matter + content)
-  data/
-    site.json            Site name, URL, contact email
-    nav.json             Sidebar navigation and page order
-    quran.json           Full Qur’an in Arabic (Tanzil Uthmani), used for every verse card
-    translation.json     English meanings of the verses quoted on the site (Kanz-ul-Iman, English rendering)
-    hadith.json          Every hadith quoted on the site, with source, link and grading
-assets/
-  css/                   tokens → base → layout → components → content → viz
-  js/app.js              Theme, reading settings, navigation, TOC, copy, search
-  js/viz/                Canvas visualisations (galaxy, orbits, expansion) + shared engine
-  js/tools/labs.js       Calculators (abjad, solar/lunar, ʿawl, primes, isostasy, relativity, light)
-  img/                   Logo, favicons, social image, icon sprite
-tools/fetch_quran.py     Regenerates src/data/quran.json from api.alquran.cloud
-.github/workflows/       Builds and deploys to GitHub Pages on every push to main
+  data/              Source of truth, unchanged from the original site
+    quran.json         Full Qur’an in Arabic (Tanzil Uthmani); build-time only, never shipped
+    translation.json   English meanings of the verses quoted on the site (Kanz-ul-Iman)
+    hadith.json        Every hadith quoted on the site, with source, link and grading
+    site.json          Name, URL, base path, contact email
+  generated/         Written by `pnpm gen` (gitignored): only the quoted verses
+  domain/            Typed access to the data: VerseRef, HadithKey, Status
+  content/
+    define.ts          The Page / Topic / Step types every page is written in
+    pages/*.tsx        One file per page; each ends with `satisfies Page`
+    registry.ts        All pages in journey order
+    journey.ts         The home page's stops
+  routes/            TanStack file routes: home, /$slug/, /claims/, 404
+  components/        Scripture (Verse, Hadith), evidence (ThreeLinks, ClaimStar), topic layout, chrome, visualisations
+  scene/             The persistent 3D sky: one point cloud per stop of the journey
+  labs/              Calculators: pure maths in *.ts (tested), UI in ui/
+  styles/app.css     Design tokens (dark and light), type, the dawn/dusk theme transition
+scripts/gen-data.ts  Validates the JSON and writes src/generated/verses.json
+tools/fetch_quran.py Regenerates src/data/quran.json from api.alquran.cloud (one-off)
 ```
 
 ## Writing content
 
-Pages use shortcodes so scripture is never typed by hand:
+A page is data plus prose. The prose is JSX; the structure is typed:
 
-| Shortcode | Output |
-|---|---|
-| `{{verse 51:47}}`, `{{verse 23:12-14}}` | Verse card: Arabic, translation, link to quran.com |
-| `{{ar 3:190}}`, `{{en 3:190}}` | Just the Arabic or English text of a verse |
-| `{{hadith bukhari:5678}}` | Hadith card from `src/data/hadith.json` |
-| `{{status interpretive}}` | Evidence badge: `established`, `interpretive`, `debated`, `unseen`, `caution` |
-| `{{root}}` | Relative path to the site root |
+```tsx
+{
+  kind: "topic",
+  id: "smoke",
+  status: "interpretive",            // established | interpretive | debated | unseen | caution
+  title: "“The heaven… and it was smoke”",
+  scripture: [{ verse: "41:11" }],   // or { verse: "23:12", to: "23:14" } or { hadith: "bukhari:5678" }
+  steps: [
+    { heading: "What the words say", gist: <p>…</p>, more: <p>…</p> },
+    { heading: "What science says", gist: <p>…</p> },
+    { heading: "How close is the match?", gist: <p>…</p> },
+  ],
+}
+```
 
-The build **fails** if a verse reference does not exist, its English is missing from `translation.json`, or a hadith key is missing.
+`gist` is always shown and `more` sits behind “Read more”, so pages stay light without losing any text.
 
-To quote a new verse, add its English to `src/data/translation.json` exactly as printed, checked against the original page.
+**Verse and hadith references are checked by the compiler.** `VerseRef` is the set of verses in `translation.json`, so `{ verse: "21:31" }` does not compile until that verse’s English is added. To quote a new verse, add its English to `src/data/translation.json` exactly as printed, then run `pnpm gen`.
 
 ## Deploying
 
-1. Push to a GitHub repository (branch `main`).
-2. In the repository: **Settings → Pages → Source: GitHub Actions**.
-3. If the repository name or user changes, update `url` and `base` in `src/data/site.json`.
+`.github/workflows/deploy.yml` runs `pnpm check` on every pull request. On every push to `main` it also publishes `dist/client` to GitHub Pages (**Settings → Pages → Source: GitHub Actions**). If the repository name or owner changes, update `url` and `base` in `src/data/site.json`.
 
 ## Sources
 

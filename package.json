@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "gen": "tsx scripts/gen-data.ts",
+    "gen": "tsx scripts/gen-data.ts && tsx scripts/gen-nav.tsx",
     "dev": "pnpm gen && vite dev",
     "build": "pnpm gen && vite build",
     "preview": "vite preview",
@@ -46,5 +46,9 @@
     "typescript-eslint": "^8.70.1",
     "vite": "^8.3.0",
     "vitest": "^5.0.1"
+  },
+  "packageManager": "pnpm@12.6.0",
+  "engines": {
+    "node": ">=22"
   }
 }

@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 import reactHooks from "eslint-plugin-react-hooks";
 
 export default defineConfig(
-  { ignores: ["dist", ".output", ".tanstack", "node_modules", "src/routeTree.gen.ts", "assets", "src/pages", "src/layouts", "docs", "tools"] },
+  { ignores: ["dist", ".output", ".tanstack", "node_modules", "src/routeTree.gen.ts", "docs", "tools"] },
   js.configs.recommended,
   tseslint.configs.strictTypeChecked,
   reactHooks.configs.flat.recommended,
@@ -20,6 +20,8 @@ export default defineConfig(
       "@typescript-eslint/no-confusing-void-expression": "off",
     },
   },
+  // R3F scenes mutate three.js objects inside useFrame by design (no React state per frame).
+  { files: ["src/scene/**", "src/components/viz/**"], rules: { "react-hooks/immutability": "off" } },
   // TanStack Router's notFound()/redirect() are thrown by design.
   { files: ["src/routes/**"], rules: { "@typescript-eslint/only-throw-error": "off" } },
 );
