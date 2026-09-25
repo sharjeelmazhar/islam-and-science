@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 import reactHooks from "eslint-plugin-react-hooks";
 
 export default defineConfig(
-  { ignores: ["dist", ".output", ".tanstack", "node_modules", "src/routeTree.gen.ts", "docs", "tools"] },
+  { ignores: ["dist", ".output", ".tanstack", "node_modules", "src/routeTree.gen.ts", "docs"] },
   js.configs.recommended,
   tseslint.configs.strictTypeChecked,
   reactHooks.configs.flat.recommended,

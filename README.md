@@ -40,7 +40,7 @@ src/
   labs/              Calculators: pure maths in *.ts (tested), UI in ui/
   styles/app.css     Design tokens (dark and light), type, the dawn/dusk theme transition
 scripts/gen-data.ts  Validates the JSON and writes src/generated/verses.json
-tools/fetch_quran.py Regenerates src/data/quran.json from api.alquran.cloud (one-off)
+scripts/fetch-quran.ts   `pnpm fetch-quran`: regenerates src/data/quran.json from api.alquran.cloud (one-off)
 ```
 
 ## Writing content

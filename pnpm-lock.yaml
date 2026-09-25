@@ -169,10 +169,10 @@ importers:
       '@fontsource-variable/newsreader':
         specifier: ^5.3.0
         version: 5.3.0
-      '@fontsource/amiri':
+      '@fontsource/amiri-quran':
         specifier: ^5.3.0
         version: 5.3.0
-      '@fontsource/amiri-quran':
+      '@fontsource/atkinson-hyperlegible':
         specifier: ^5.3.0
         version: 5.3.0
       '@fontsource/ibm-plex-mono':
@@ -181,7 +181,7 @@ importers:
       '@fontsource/ibm-plex-sans':
         specifier: ^5.3.0
         version: 5.3.0
-      '@fontsource/ibm-plex-sans-arabic':
+      '@fontsource/newsreader':
         specifier: ^5.3.0
         version: 5.3.0
       '@react-three/drei':
@@ -550,17 +550,17 @@ packages:
   '@fontsource/amiri-quran@5.3.0':
     resolution: {integrity: sha512-z/Y3JCqGWnWLpfJGBWPf7C42IxHjxxuwgcCHLmsU/hYd65GHXkZ/XTVpEGtWrEx9VlzdzMMRHDNTJvs8OwAeEw==}
 
-  '@fontsource/amiri@5.3.0':
-    resolution: {integrity: sha512-i4SWJnVIphj8556EdVzNrEG/Qu82k6JXjXTtSUIohx3tHmo2GHw1Kv60TWo+xjk7Yf1Etb2Gskh0lUFclTKyUw==}
+  '@fontsource/atkinson-hyperlegible@5.3.0':
+    resolution: {integrity: sha512-Sp8Ve8+rQmENY2Lv02VH7sLpntzTTvnncnJMTbRE7DX6TLxGraN4ykZfzaUWIoCFmaomwkvNiqmlPkrKBuDoSA==}
 
   '@fontsource/ibm-plex-mono@5.3.0':
     resolution: {integrity: sha512-eTgnZjZEGk1QtD3ZstF+Vclo2HLAni8YMy34/DxllwZvyz1lR/1RF/xTiAquOBO7MvqBx8D2Ig2WCPMVfdZu7Q==}
 
-  '@fontsource/ibm-plex-sans-arabic@5.3.0':
-    resolution: {integrity: sha512-ZZ4g+JDgQY0NqSh4o0MNWU1sHQmtcee1g++aKAwyJvZxnT5y51JXsN1cIXnaQaMd40dcbK6QFYa+Z1LbaiNuqA==}
-
   '@fontsource/ibm-plex-sans@5.3.0':
     resolution: {integrity: sha512-CbE4CbbEEZJX860XyUiRpsksXIQR8Rp2XDva2VO53NJox9tVNtusrysd2x5YkUEY3ErQ66W1IiiQL8/wihhw5w==}
+
+  '@fontsource/newsreader@5.3.0':
+    resolution: {integrity: sha512-AFR6ZKY89GNL+9qBI2P2+66NhD5bhOj/v6fsLnFYLM4E0JnMB1yKb+Ro8cA64i1hwAWoBfTq5CHJGWH1toLDkw==}
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -2442,13 +2442,13 @@ snapshots:
 
   '@fontsource/amiri-quran@5.3.0': {}
 
-  '@fontsource/amiri@5.3.0': {}
+  '@fontsource/atkinson-hyperlegible@5.3.0': {}
 
   '@fontsource/ibm-plex-mono@5.3.0': {}
 
-  '@fontsource/ibm-plex-sans-arabic@5.3.0': {}
-
   '@fontsource/ibm-plex-sans@5.3.0': {}
+
+  '@fontsource/newsreader@5.3.0': {}
 
   '@humanfs/core@0.19.2':
     dependencies:
