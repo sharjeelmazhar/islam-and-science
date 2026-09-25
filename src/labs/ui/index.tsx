@@ -1,18 +1,17 @@
-// Interactive calculators, one per original lab. Implementations live in this folder; the maths in src/labs/*.ts.
-// TODO(labs): replace these placeholders.
-const Placeholder = ({ name }: { name: string }) => <div className="border border-rule p-6 font-mono text-xs text-ink-3">{name}</div>;
+// Interactive calculators, one per lab of the original site. The maths lives in src/labs/*.ts.
+// Each lab takes no props; the page renders its heading and intro just above it.
 
 /** Solar ↔ lunar years (mathematics: 300 solar years = 309 lunar). */
-export const YearsLab = () => <Placeholder name="YearsLab" />;
+export { YearsLab } from "./YearsLab";
 /** al-Minbariyya: inheritance shares before/after proportional reduction (ʿawl). */
-export const AwlLab = () => <Placeholder name="AwlLab" />;
+export { AwlLab } from "./AwlLab";
 /** Prime checker with factors and multiple-of-19 check. */
-export const PrimeLab = () => <Placeholder name="PrimeLab" />;
+export { PrimeLab } from "./PrimeLab";
 /** Abjad letter-value calculator with presets. */
-export const AbjadLab = () => <Placeholder name="AbjadLab" />;
+export { AbjadLab } from "./AbjadLab";
 /** Time dilation calculator (physics). */
-export const DilationLab = () => <Placeholder name="DilationLab" />;
+export { DilationLab } from "./DilationLab";
 /** Light travel time to astronomical objects (deep space). */
-export const LightLab = () => <Placeholder name="LightLab" />;
+export { LightLab } from "./LightLab";
 /** Isostasy: mountain root depth from height (earth). */
-export const IsostasyLab = () => <Placeholder name="IsostasyLab" />;
+export { IsostasyLab } from "./IsostasyLab";
