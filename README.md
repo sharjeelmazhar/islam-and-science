@@ -22,7 +22,7 @@ src/
   data/
     site.json            Site name, URL, contact email
     nav.json             Sidebar navigation and page order
-    quran.json           Full Qur’an in Arabic (Tanzil Uthmani), used for every verse card
+    quran.json           Full Qur’an in Arabic, IndoPak script (DigitalKhatt text), used for every verse card
     translation.json     English meanings of the verses quoted on the site (Kanz-ul-Iman, English rendering)
     hadith.json          Every hadith quoted on the site, with source, link and grading
 assets/
@@ -31,7 +31,7 @@ assets/
   js/viz/                Canvas visualisations (galaxy, orbits, expansion) + shared engine
   js/tools/labs.js       Calculators (abjad, solar/lunar, ʿawl, primes, isostasy, relativity, light)
   img/                   Logo, favicons, social image, icon sprite
-tools/fetch_quran.py     Regenerates src/data/quran.json from api.alquran.cloud
+tools/fetch_indopak.py   Regenerates the Arabic in src/data/quran.json (IndoPak script), with verse-count checks
 .github/workflows/       Builds and deploys to GitHub Pages on every push to main
 ```
 
@@ -59,7 +59,7 @@ To quote a new verse, add its English to `src/data/translation.json` exactly as 
 
 ## Sources
 
-Qur’an text: [Tanzil Project](https://tanzil.net) (Uthmani). English: *Kanz-ul-Iman*, English rendering by Mufti Abdun Nabi Hamidi (Maktaba-tul-Madinah); only the verses discussed are quoted. Hadith numbering: [sunnah.com](https://sunnah.com). Full bibliography on the *Sources & References* page.
+Qur’an Arabic: [DigitalKhatt IndoPak text](https://github.com/DigitalKhatt/digitalkhatt-js) (MIT), shown in the [DigitalKhatt IndoPak font](https://github.com/DigitalKhatt/indopakfont) (OFL 1.1), checked against dawateislami.net. English: *Kanz-ul-Iman*, English rendering by Mufti Abdun Nabi Hamidi (Maktaba-tul-Madinah); only the verses discussed are quoted. Hadith numbering: [sunnah.com](https://sunnah.com). Full bibliography on the *Sources & References* page.
 
 ## Contact
 
