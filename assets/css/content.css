@@ -252,3 +252,10 @@ sup.cite a { text-decoration: none; color: var(--accent); font-weight: 650; font
 /* Timelines are lists, but must not get the running-text list indent */
 .page-body .timeline { padding-left: 0; }
 .page-body .timeline li + li { margin-top: 0; }
+
+/* Long unbroken words (transliterated titles, URLs) may wrap on very narrow phones */
+.page-body p, .page-body li, .page-body dd, .page-body figcaption { overflow-wrap: break-word; }
+
+/* Verdict boxes: the label moves above the text when there is no room beside it */
+.verdict { flex-wrap: wrap; }
+.verdict p { flex: 1 1 16rem; min-width: 0; }
