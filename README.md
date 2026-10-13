@@ -1,5 +1,23 @@
 # Islam & Science
 
+<!-- portfolio:start -->
+<p align="center">
+  <img src="docs/portfolio/01-cover.jpg" alt="Islam & Science overview" width="720">
+</p>
+
+<details>
+<summary><b>More screenshots</b> (verse cards built from data · canvas visualisations · calculators and search)</summary>
+<br>
+<p align="center">
+  <img src="docs/portfolio/02-verses.jpg" alt="Verse cards built from data" width="720">
+  <br><br>
+  <img src="docs/portfolio/03-visualisations.jpg" alt="Canvas visualisations" width="720">
+  <br><br>
+  <img src="docs/portfolio/04-labs-search.jpg" alt="Calculators and search" width="720">
+</p>
+</details>
+<!-- portfolio:end -->
+
 A careful, referenced guide to the Qur’an, the Hadith and modern science (cosmology, physics, mathematics, earth science and biology), written for curious minds of every background.
 
 Static website with no backend and no dependencies beyond Python’s standard library.
